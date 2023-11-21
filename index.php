@@ -1,5 +1,6 @@
 <?php include "db.php";
 $sql = "SELECT * FROM phone_book";
+$result = $connection->query($sql);
 ?>
 
 
@@ -10,10 +11,13 @@ $sql = "SELECT * FROM phone_book";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Book</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section>
+    <h1>Phone Book</h1>
+    <section class="flex">
         <form action="add.php" method="post">
             <div>
                 <label for="name">Name</label>
@@ -31,6 +35,25 @@ $sql = "SELECT * FROM phone_book";
                 <th>Name</th>
                 <th>Phone Number</th>
             </tr>
+            <?php
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) { ?>
+                    <tr>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['tel'] ?></td>
+                    </tr>
+                <?php
+                    # code...
+                }
+            } else { ?>
+                <tr>
+                    <td rowspan="2">No Contacts Added.</td>
+                </tr>
+            <?php
+
+            }
+            ?>
+
         </table>
     </section>
 

@@ -1,0 +1,19 @@
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex>form {
+    width: 33.3333%;
+    min-width: 300px;
+}
+
+form>div>* {
+    display: block;
+    width: 80%;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 4px 8px;
+}
