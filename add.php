@@ -5,10 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $name = $_POST['name'];
     $phone_number = $_POST['phone-number'];
 
-    $query = "INSERT INTO phone_book (`name`, `tel`) VALUES ($name, $phone_number)";
+    $query = "INSERT INTO phone_book (`name`, `tel`) VALUES ('$name', '$phone_number')";
 
     if ($connection->query($query) == TRUE) {
         echo "Contact added successfully!";
+        header('Location: index.php');
     } else {
         echo "Error: Contact not added";
     }
