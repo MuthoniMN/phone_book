@@ -47,7 +47,7 @@ $result = $connection->query($sql);
                 }
             } else { ?>
                 <tr>
-                    <td rowspan="2">No Contacts Added.</td>
+                    <td colspan="2">No Contacts Added.</td>
                 </tr>
             <?php
 

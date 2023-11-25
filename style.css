@@ -1,11 +1,12 @@
 .flex {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
     height: 80vh;
 }
 
 .flex>form {
-    width: 33.3333%;
+    flex-basis: 33.3333%;
     min-width: 300px;
 }
 
@@ -21,12 +22,5 @@ input {
 
 table {
     flex-basis: 40%;
-}
-
-th,
-td {
-    padding: 0;
-    margin: 0;
-    border: 1px solid #000;
-    text-align: center;
+    height: fit-content;
 }
